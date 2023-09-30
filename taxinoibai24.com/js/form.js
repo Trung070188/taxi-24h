@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function isValidPhone(phone) {
         // Implement your phone validation logic here
         // You can use regular expressions or other methods to validate the phone number
-        return /^[0-9]$/.test(phone); // Example: 10-digit numeric phone number
+        return /^[0-9]*$/.test(phone); // Example: 10-digit numeric phone number
     }
     // Function to validate an email address
     function isValidEmail(email) {
