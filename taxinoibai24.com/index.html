@@ -450,21 +450,6 @@
 
         gtag('config', 'G-K4GCK0HWV0');
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-598N2BV');</script>
-    <!-- End Google Tag Manager -->
     <link rel="icon" href="wp-content/uploads/2022/01/cropped-TAXI-32x32.png" sizes="32x32"/>
     <link rel="icon" href="wp-content/uploads/2022/01/cropped-TAXI-192x192.png" sizes="192x192"/>
     <link rel="apple-touch-icon" href="wp-content/uploads/2022/01/cropped-TAXI-180x180.png"/>
@@ -986,36 +971,35 @@
                                                                            aria-atomic="true"></p>
                                         <ul></ul>
                                     </div>
-                                    <form action="https://script.google.com/macros/s/AKfycbxMSWSMQmBgf3zowWvNVuReZNTiB6EH5Vww8eIPKCkfgNq2ZCNPgP8XKhx2CbBctIY/exec" method="post" class="wpcf7-form init"
-                                          aria-label="Contact form" novalidate="novalidate" data-status="init">
+                                    <form action="https://script.google.com/macros/s/AKfycbwkJme66BbypHtCI3OiQ7_ybqB3Bdy1BS3LLqOHdhFAAvYt5E_UVnsT9NJBmtLiwww/exec" method="post" class="wpcf7-form init"
+                                          name="contact_form"
+                                          data-status="init" id="contact_form">
                                         <input name="form" type="hidden" value="dat_xe" />
-                                        <p><label><span class="wpcf7-form-control-wrap" data-name="tel-154"><input
-                                                size="40"
-                                                class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
-                                                aria-required="true" aria-invalid="false" placeholder="Điện thoại*"
+                                        <p><label><span class="wpcf7-form-control-wrap"><input
+                                                maxlength="40"
+                                                class="wpcf7-form-control"
+                                                placeholder="Điện thoại*"
                                                 value="" type="tel" name="phone"/></span></label>
                                         </p>
                                         <div class="form-contact-twocol">
                                             <div id="info-left">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="text-452"><input
-                                                        size="40"
-                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                        aria-required="true" aria-invalid="false"
+                                                <p><span class="wpcf7-form-control-wrap"><input
+                                                        maxlength="40"
+                                                        class="wpcf7-form-control"
                                                         placeholder="Nơi cần đón*" value="" type="text"
-                                                        name="pick_up_place"/></span>
+                                                        name="pick_up_place" /></span>
                                                 </p>
                                             </div>
                                             <div id="info-right">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="text-453"><input
-                                                        size="40"
-                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                        aria-required="true" aria-invalid="false"
+                                                <p><span class="wpcf7-form-control-wrap"><input
+                                                        maxlength="40"
+                                                        class="wpcf7-form-control"
                                                         placeholder="Nơi cần đến*" value="" type="text"
                                                         name="destination"/></span>
                                                 </p>
                                             </div>
-                                            <p><label><span class="wpcf7-form-control-wrap" data-name="menu-783"><select
-                                                    class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required"
+                                            <p><label><span class="wpcf7-form-control-wrap"><select
+                                                    class="wpcf7-form-control wpcf7-select"
                                                     aria-required="true" aria-invalid="false" name="range_of_vehicle"><option
                                                     value="Loại xe 4 chỗ ngồi">Loại xe 4 chỗ ngồi</option><option
                                                     value="Loại xe 7 chỗ ngồi">Loại xe 7 chỗ ngồi</option><option
@@ -1023,17 +1007,17 @@
                                                     value="Loại xe 29 chỗ ngồi">Loại xe 29 chỗ ngồi</option></select></span></label>
                                             </p>
                                             <p><label>Ngày đón*<br/>
-                                                <span class="wpcf7-form-control-wrap" data-name="date-57"><input
-                                                        class="wpcf7-form-control wpcf7-date wpcf7-validates-as-required wpcf7-validates-as-date"
+                                                <span class="wpcf7-form-control-wrap"><input
+                                                        class="wpcf7-form-control wpcf7-date"
                                                         aria-required="true" aria-invalid="false"
-                                                        placeholder="Ngày đón*" value="" type="date" name="date-57"/></span></label>
+                                                        placeholder="Ngày đón*" value="" type="date" name="pick_up_date"/></span></label>
                                             </p>
-                                            <div class="form-contact-twocol">
+                                            <div class="form-contact-twocol" id="form-contact-loading">
                                                 <div id="info-left">
                                                     <p><span class="wpcf7-form-control-wrap"
-                                                             data-name="menu-784"><select
-                                                            class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required"
-                                                            aria-required="true" aria-invalid="false" name="menu-784"><option
+                                                    ><select
+                                                            class="wpcf7-form-control wpcf7-select"
+                                                            aria-required="true" aria-invalid="false" name="pick_up_time"><option
                                                             value="Lúc 00h">Lúc 00h</option><option value="Lúc 01h">Lúc 01h</option><option
                                                             value="Lúc 02h">Lúc 02h</option><option value="Lúc 03h">Lúc 03h</option><option
                                                             value="Lúc 04h">Lúc 04h</option><option value="Lúc 05h">Lúc 05h</option><option
@@ -1050,9 +1034,9 @@
                                                 </div>
                                                 <div id="info-right">
                                                     <p><span class="wpcf7-form-control-wrap"
-                                                             data-name="menu-785"><select
-                                                            class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required"
-                                                            aria-required="true" aria-invalid="false" name="menu-785"><option
+                                                    ><select
+                                                            class="wpcf7-form-control wpcf7-select"
+                                                            aria-required="true" aria-invalid="false" name="pick_up_minutes"><option
                                                             value="00 phút">00 phút</option><option value="05 phút">05 phút</option><option
                                                             value="10 phút">10 phút</option><option value="15 phút">15 phút</option><option
                                                             value="20 phút">20 phút</option><option value="25 phút">25 phút</option><option
@@ -1065,7 +1049,7 @@
                                                           type="submit" value="ĐẶT XE"/>
                                                 </p>
                                             </div>
-                                            <div class="wpcf7-response-output" aria-hidden="true"></div>
+                                            <div class="contact-response-output" aria-hidden="true"></div>
                                     </form>
                                 </div>
                             </div>
@@ -2078,45 +2062,45 @@
                                                                            aria-atomic="true"></p>
                                         <ul></ul>
                                     </div>
-                                    <form action="index.html#wpcf7-f60-p2-o2" method="post" class="wpcf7-form init"
-                                          aria-label="Contact form" novalidate="novalidate" data-status="init">
-                                        <input name="form" type="hidden" value="y_kien" />
+                                    <form action="https://script.google.com/macros/s/AKfycbwkJme66BbypHtCI3OiQ7_ybqB3Bdy1BS3LLqOHdhFAAvYt5E_UVnsT9NJBmtLiwww/exec"
+                                          name="feedback_form"
+                                          method="post" class="wpcf7-form init"
+                                          data-status="init" id="feedback_form">
+                                        <input name="form" type="hidden" value="y_kien"/>
                                         <p><label><span class="wpcf7-form-control-wrap" data-name="text-975"><input
-                                                size="40"
-                                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                aria-required="true" aria-invalid="false" placeholder="Họ tên" value=""
-                                                type="text" name="text-975"/></span></label>
+                                                maxlength="40"
+                                                class="wpcf7-form-control"
+                                                placeholder="Họ tên" value=""
+                                                type="text" name="name"/></span></label>
                                         </p>
                                         <p><label><span class="wpcf7-form-control-wrap" data-name="tel-175"><input
-                                                size="40"
-                                                class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
-                                                aria-required="true" aria-invalid="false" placeholder="Số điện thoại*"
-                                                value="" type="tel" name="tel-175"/></span></label>
+                                                maxlength="40"
+                                                class="wpcf7-form-control"
+                                                placeholder="Số điện thoại*"
+                                                value="" type="tel" name="phoneFeedback"/></span></label>
                                         </p>
                                         <p><label><span class="wpcf7-form-control-wrap" data-name="email-106"><input
-                                                size="40"
-                                                class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-                                                aria-required="true" aria-invalid="false" value="Email" type="email"
-                                                name="email-106"/></span></label>
+                                                maxlength="40"
+                                                class="wpcf7-form-control"
+                                                value="" type="text"
+                                                name="mail" placeholder="Email"/></span></label>
                                         </p>
                                         <p><label><span class="wpcf7-form-control-wrap" data-name="text-976"><input
-                                                size="40"
-                                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                aria-required="true" aria-invalid="false" placeholder="Địa chỉ"
-                                                value="" type="text" name="text-976"/></span></label>
+                                                maxlength="40"
+                                                class="wpcf7-form-control"
+                                                placeholder="Địa chỉ"
+                                                value="" type="text" name="address"/></span></label>
                                         </p>
                                         <p><label><span class="wpcf7-form-control-wrap"
                                                         data-name="textarea-713"><textarea cols="40" rows="10"
-                                                                                           class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
-                                                                                           aria-required="true"
-                                                                                           aria-invalid="false"
+                                                                                           class="wpcf7-form-control wpcf7-textarea"
                                                                                            placeholder="Nội dung"
-                                                                                           name="textarea-713"></textarea></span></label>
+                                                                                           name="content"></textarea></span></label>
                                         </p>
                                         <p><input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit"
                                                   value="Gửi"/>
                                         </p>
-                                        <div class="wpcf7-response-output" aria-hidden="true"></div>
+                                        <div class="feedback-response-output" aria-hidden="true"></div>
                                     </form>
                                 </div>
                             </div>
@@ -2716,8 +2700,6 @@
         font-size: var(--wp--preset--font-size--x-large) !important;
     }
 </style>
-<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/swv/js/index.js@ver=5.7.1'
-        id='swv-js'></script>
 <script type='text/javascript' id='contact-form-7-js-extra'>
     /* <![CDATA[ */
     var wpcf7 = {
@@ -2726,8 +2708,6 @@
     };
     /* ]]> */
 </script>
-<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/index.js@ver=5.7.1'
-        id='contact-form-7-js'></script>
 <script type='text/javascript'
         src='wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js@ver=3.15.2'
         id='flatsome-live-search-js'></script>
@@ -2774,8 +2754,11 @@
         src='https://cdn.jsdelivr.net/npm/intersection-observer-polyfill@0.1.0/dist/IntersectionObserver.js?ver=0.1.0'
         id='intersection-observer-polyfill-js'></script>
 <![endif]-->
+// form
+<!--<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+<script src="js/form.js"></script>
+
+
 
 </body>
 </html>
-
-<!-- Page supported by LiteSpeed Cache 5.3.1 on 2023-09-27 02:29:33 -->
