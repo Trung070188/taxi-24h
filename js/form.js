@@ -14,13 +14,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
         fetch(action, {
             method: "POST",
             body: data,
-        }).then((res) => {
+        }).then(async (res) => {
             if(res.status == 200){
                 hiddenLoading("form-contact-loading");
                 let contactRes = document.getElementsByClassName("contact-response-output");
                 for (let i = 0; i < contactRes.length; i++) {
                     contactRes[i].innerHTML = 'Xin cảm ơn, form đã được gửi thành công.';
                     contactRes[i].style.color = "green";
+                    await sendTelegramNotification(`
+                    <b>Thông báo đặt xe:</b>
+                    \n<b>Phone:</b> <a href="tel:${data.get('phone')}">${data.get('phone')}</a>,
+                    \nNơi đón: ${data.get('pick_up_place')},
+                    \nNơi đến: ${data.get('destination')},
+                    \nLoại xe: ${data.get('range_of_vehicle')},
+                    \nNgày đón: ${data.get('pick_up_date')},
+                    \nGiờ đón: ${data.get('pick_up_time')} - ${data.get('pick_up_minutes')},
+                    `);
+
+
+
                 }
             } else {
                 hiddenLoading("form-contact-loading");
@@ -29,9 +41,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     contactRes[i].innerHTML = 'Có lỗi xảy ra vui lòng thử lại.';
                     contactRes[i].style.color = "red";
                 }
+
             }
         });
     });
+    // noti telegram
+    async function sendTelegramNotification(message) {
+        const TELEGRAM_TOKEN = '6491009026:AAH7svww7BA69D28ai6B8aYtas2FuCV-vOM';
+        const TELEGRAM_CHAT_ID = '-1001837287139';
+
+        const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+        const payload = {
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+            parse_mode: 'HTML',
+        };
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+            if (data.ok) {
+                console.log('Notification sent successfully');
+            } else {
+                console.error('Error sending Telegram notification:', data.description);
+            }
+        } catch (error) {
+            console.error('Failed to send Telegram notification:', error);
+        }
+    }
     // validation contact form
     async function validateContactForm(data) {
         const phoneInput = data.get("phone");
